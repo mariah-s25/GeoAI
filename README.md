@@ -1,8 +1,8 @@
 # ResNet-Based U1652 Geo-Localization (Simplified MBEG)
 
-This repository contains a simplified training pipeline for cross-view geo-localization on the U1652 dataset, using a Dual-ResNet-based model.
+This repository contains a training pipeline for cross-view geo-localization on the U1652 dataset, using a Dual-ResNet-based model.
 
-It is adapted from the original [MBEG (Multi-Branch Embedding Guidance)](https://github.com/Reza-Zhu/ACMMM23-Solution-MBEG) solution presented at **ACM MM 2023**, but removes Local Perception Network (LPN) and uses a simpler Dual-ResNet model for training and evaluation.
+It is adapted from the original [MBEG (Multi-Branch Embedding Guidance)](https://github.com/Reza-Zhu/ACMMM23-Solution-MBEG) solution presented at **ACM MM 2023**, but removes Local Perception Network (LPN) and uses a Dual-ResNet model for training and evaluation.
 
 ---
 
@@ -14,19 +14,11 @@ This project is based on the official MBEG solution available here:
 
 We specifically adapted components from:
 - `settings.yaml`
-- `Preprocessing.py`
-- `model_.py`
+- `Preprocessing.py` into `Modified_Preprocessing.py`
+- `model_.py` into `dualresnet.py`
 - `train.py`
 - `U1652_test_and_evaluate.py`
 
-We thank the authors for their open-source contribution.
-
 ---
-
-## 📁 Contents
-
-- `train.py`: ResNet training script using satellite and drone view data from U1652.
-- `light_model.py`: Simple ResNet-based architecture.
-- `subset_dataloader.py`: Loads a subset of U1652 for faster training.
-- `utils.py`: Utility functions (e.g., seed setup, config parsing, model saving).
-- `config.yaml`: Training hyperparameters.
+  
+The notebook [`ResNet_U1652.ipynb`](./ResNet_U1652.ipynb) contains the code implementation and can be used to run the training and testing.
