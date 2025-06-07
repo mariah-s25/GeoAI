@@ -1,8 +1,8 @@
 # ResNet-Based U1652 Geo-Localization (Simplified MBEG)
 
-This repository contains a simplified training pipeline for cross-view geo-localization on the U1652 dataset, using a lightweight ResNet-based model.
+This repository contains a simplified training pipeline for cross-view geo-localization on the U1652 dataset, using a Dual-ResNet-based model.
 
-It is adapted from the original [MBEG (Multi-Branch Embedding Guidance)](https://github.com/Reza-Zhu/ACMMM23-Solution-MBEG) solution presented at **ACM MM 2023**, but removes Local Perception Network (LPN) and uses a simpler ResNet model for training and evaluation.
+It is adapted from the original [MBEG (Multi-Branch Embedding Guidance)](https://github.com/Reza-Zhu/ACMMM23-Solution-MBEG) solution presented at **ACM MM 2023**, but removes Local Perception Network (LPN) and uses a simpler Dual-ResNet model for training and evaluation.
 
 ---
 
