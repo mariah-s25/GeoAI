@@ -1,10 +1,30 @@
-# WELN: Siamese Network-based Framework for Geo-localization in Extreme Weather
+# ResNet-Based U1652 Geo-Localization (Simplified MBEG)
 
-Solution for ACMMM24 Multimedia Drone Satellite Matching Challenge In Multiple-environment
+This repository contains a simplified training pipeline for cross-view geo-localization on the U1652 dataset, using a Dual ResNet-based model.
 
-Cross-view geo-localization is a task of matching the same geographic image from differerent views, e.g., drone and satellite. Due to its GPS-free advantage, cross-view geo-localization is gaining increasing research interest, especially in drone-based localization and navigation applications. In order to guarantee system robustness, existing methods mainly focused on image augmentation and denoising, while facing performace degradation when extreme weather considered. In this paper, we propose an end-to-end image retrieval framework, WELN. By integrating the advanced EVA02 netwotk and LPN algorithm, WELN can extract valuable classification features more efficiently even under extreme weather conditions. Additionally, to enhance model robustness, we expand the University-1652 dataset with nine different weather conditions added. Our method achieves state-of-the-art Recall@1 accuracy on University-1652 dataset, with 92.87\% for drone-view target localization task and 93.46\% for drone navigation task. Besides, we gain the fourth place in the ACMMM24 Multimedia Drone-Satellite Matching Challenge. 
+It is adapted from the original [MBEG (Multi-Branch Embedding Guidance)](https://github.com/Reza-Zhu/ACMMM23-Solution-MBEG) solution presented at **ACM MM 2023**, but removes Local Perception Network (LPN) and uses a Dual ResNet model for training and evaluation.
 
-University1652-Plus：链接：https://pan.baidu.com/s/1p3VlZZSFtMlxdO0UmVf6Sg?pwd=am4o 提取码：am4o 
+---
 
-weights: 链接：https://pan.baidu.com/s/1GJD37xFHWh_oPncif25MSA 提取码：7416
+## 🔍 Original Source & Attribution
 
+This project is based on the official MBEG solution available here:
+
+> 🔗 https://github.com/Reza-Zhu/ACMMM23-Solution-MBEG
+
+We specifically adapted components from:
+- `U1652_test_and_evaluate.py`
+- `train.py`
+- Model and dataloader utilities
+
+We thank the authors for their open-source contribution.
+
+---
+
+## 📁 Contents
+
+- `train.py`: ResNet training script using satellite and drone view data from U1652.
+- `light_model.py`: Simple ResNet-based architecture.
+- `subset_dataloader.py`: Loads a subset of U1652 for faster training.
+- `utils.py`: Utility functions (e.g., seed setup, config parsing, model saving).
+- `config.yaml`: Training hyperparameters.
