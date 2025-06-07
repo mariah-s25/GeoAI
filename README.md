@@ -13,9 +13,11 @@ This project is based on the official MBEG solution available here:
 > 🔗 https://github.com/Reza-Zhu/ACMMM23-Solution-MBEG
 
 We specifically adapted components from:
-- `U1652_test_and_evaluate.py`
+- `settings.yaml`
+- `Preprocessing.py`
+- `model_.py`
 - `train.py`
-- Model and dataloader utilities
+- `U1652_test_and_evaluate.py`
 
 We thank the authors for their open-source contribution.
 
