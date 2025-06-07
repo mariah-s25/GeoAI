@@ -1,60 +1,30 @@
-# ACMMM23-Solution-MBEG
-Paper Link: https://doi.acm.org/?doi=3607834.3616562
+# ResNet-Based U1652 Geo-Localization (Simplified MBEG)
 
-## Modern Backbone for Efficient Geo-localization
+This repository contains a simplified training pipeline for cross-view geo-localization on the U1652 dataset, using a lightweight ResNet-based model.
 
-### Code Overview:
+It is adapted from the original [MBEG (Multi-Branch Embedding Guidance)](https://github.com/Reza-Zhu/ACMMM23-Solution-MBEG) solution presented at **ACM MM 2023**, but removes Local Perception Network (LPN) and uses a simpler ResNet model for training and evaluation.
 
-- config: settings.yaml
-- model definitions: model_.py
-- train: train.py 
-- distillation knowledge: distill_train.py
-- test: U1652_test_and_evaluate.py
-- prepare dataset: Preprocessing.py
-- multiply queries: multi.py
-- draw heat map: draw_cam_ViT.py
+---
 
-- predict University160k : predict.py / predict.ipynb
-- export answer.txt : export.ipynb
+## 🔍 Original Source & Attribution
 
-## Model weights
-Baidu Cloud Disk Link: https://pan.baidu.com/s/1k1z90EyLaL85PqeSxxlWOw?pwd=1652 提取码: 1652 
+This project is based on the official MBEG solution available here:
 
-- MBEG-L1 for University-1652: MBEG-L1-1652.pth
-   - Drone -> Satellite: Recall@1:  92.50   AP: 93.75
-   - Satellite -> Drone: Recall@1:  94.15   AP: 91.57
+> 🔗 https://github.com/Reza-Zhu/ACMMM23-Solution-MBEG
 
-- MBEG-L2 for University-1652: MBEG-L2-1652.pth
-   - Drone -> Satellite: Recall@1:  89.78   AP: 91.53
-   - Satellite -> Drone: Recall@1:  92.01   AP: 88.81
-   
-- MBEG-B1 for University-1652: MBEG-B1-1652.pth
-   - Drone -> Satellite: Recall@1:  87.48   AP: 89.36
-   - Satellite -> Drone: Recall@1:  90.73   AP: 86.29
+We specifically adapted components from:
+- `U1652_test_and_evaluate.py`
+- `train.py`
+- Model and dataloader utilities
 
-- MBEG-B2 for University-1652: MBEG-B2-1652.pth
-   - Drone -> Satellite: Recall@1:  88.16   AP: 89.97
-   - Satellite -> Drone: Recall@1:  93.01   AP: 87.64
+We thank the authors for their open-source contribution.
 
-- MoblieViT-KD for University-1652: MobileViT-Student-1652.pth
-   - Drone -> Satellite: Recall@1:  80.57   AP: 83.44
-   - Satellite -> Drone: Recall@1:  88.44   AP: 80.45
+---
 
-## Related Works
+## 📁 Contents
 
-### University-1652 Benchmark
-https://github.com/layumi/University1652-Baseline
-
-### ACM MM23 Workshop: UAVs in Multimedia: Capturing the World from a New Perspective
-https://www.zdzheng.xyz/ACMMM2023Workshop
-
-### EVA Series backbone 
-https://github.com/baaivision/EVA
-[https://huggingface.co/Yuxin-CV/EVA-02](https://huggingface.co/timm/eva02_base_patch14_448.mim_in22k_ft_in22k_in1k)
-
-### MobileViT
-https://github.com/apple/ml-cvnets
-[https://huggingface.co/timm/mobilevitv2_200.cvnets_in22k_ft_in1k_384]
-(https://huggingface.co/timm/mobilevitv2_200.cvnets_in22k_ft_in1k_384)
-
-
+- `train.py`: ResNet training script using satellite and drone view data from U1652.
+- `light_model.py`: Simple ResNet-based architecture.
+- `subset_dataloader.py`: Loads a subset of U1652 for faster training.
+- `utils.py`: Utility functions (e.g., seed setup, config parsing, model saving).
+- `config.yaml`: Training hyperparameters.
